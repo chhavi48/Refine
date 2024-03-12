@@ -5,7 +5,6 @@ import Stats from "../../components/dashboard/Stats";
 import { ResponsiveAreaChart } from "../../components/dashboard/ResponsiveAreaChart";
 import { ResponsiveBarChart } from "../../components/dashboard/ResponsiveBarChart";
 import { TabView } from "../../components/dashboard/TabView";
-import { RecentSales } from "../../components/dashboard/RecentSales";
 import { IChartDatum, TTab } from "../../interfaces";
 
 const filters: CrudFilter[] = [
@@ -107,7 +106,6 @@ export const Dashboard: React.FC = () => {
         newCustomers={newCustomers}
       />
       <TabView tabs={tabs} />
-      <RecentSales />
     </>
   );
 };

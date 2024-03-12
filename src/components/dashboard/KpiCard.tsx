@@ -3,7 +3,6 @@ import React from "react";
 type TKpiCardProps = {
   title: string;
   data: any;
-  icon: JSX.Element;
   colors: {
     stroke: string;
     fill: string;
@@ -14,7 +13,6 @@ type TKpiCardProps = {
 export const KpiCard = ({
   title,
   data,
-  icon,
   colors,
   formatTotal = (value) => value,
 }: TKpiCardProps) => {
@@ -25,16 +23,7 @@ export const KpiCard = ({
   const textColor = total > trend ? "seagreen" : "crimson";
 
   return (
-    <div
-      className="stat my-2 py-4 flex-1 bg-zinc-50 border-l-4 rounded"
-      style={{ borderColor: colors?.stroke }}
-    >
-      <div
-        className="stat-figure text-secondary"
-        style={{ color: colors?.fill }}
-      >
-        {icon}
-      </div>
+    <div className="stat my-2 py-4 flex-1 bg-zinc-50 border-l-4 rounded">
       <div className="stat-title text-l">{title}</div>
       <div className="stat-value" style={{ color: colors?.stroke }}>
         {formatTotal(total ?? "...")}
